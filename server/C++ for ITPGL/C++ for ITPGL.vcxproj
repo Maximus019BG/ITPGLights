@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="function.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="native-lib.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="functions.h" />
