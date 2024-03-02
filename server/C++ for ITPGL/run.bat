@@ -18,6 +18,9 @@ set JAVA_FILE="D:/ITPGL/ITPGLights/server/C++ for ITPGL/Main.java"
 
 REM Compile the Java file
 javac %JAVA_FILE%
+cd "D:\ITPGL\ITPGLights\server\C++ for ITPGL\SpringBoot\itpgl-b"
+
+./mvnw spring-boot:run
 
 REM If the Java file compiled successfully, run it
 if %errorlevel% equ 0 (

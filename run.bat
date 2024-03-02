@@ -1,6 +1,5 @@
 @echo off
 
-cd "D:/ITPGL/ITPGLights/server/C++ for ITPGL"
 REM Define the paths to the JDK include directories
 set INCLUDE_PATH1=D:/java/JDK/include
 set INCLUDE_PATH2=D:/java/JDK/include/win32
@@ -19,6 +18,9 @@ set JAVA_FILE="D:/ITPGL/ITPGLights/server/C++ for ITPGL/Main.java"
 
 REM Compile the Java file
 javac %JAVA_FILE%
+cd "D:\ITPGL\ITPGLights\server\C++ for ITPGL\SpringBoot\itpgl-b"
+
+./mvnw spring-boot:run
 
 REM If the Java file compiled successfully, run it
 if %errorlevel% equ 0 (

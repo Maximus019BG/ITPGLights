@@ -9,7 +9,7 @@ extern "C" {
 #endif
 /*
  * Class:     Main
- * Method:    Func
+ * Method:    Connect_to_bluetooth_device
  * Signature: ()V
  */
 JNIEXPORT void JNICALL Java_Main_Func

@@ -10,5 +10,5 @@
 
 extern "C" JNIEXPORT void JNICALL
 Java_Main_Func(JNIEnv* env, jobject /* this */) {
-    Func();
+   Connect_to_bluetooth_device();
 }
