@@ -6,7 +6,7 @@ import Image1 from "next/image";
 const Navbar = () => {
   return (
     <div>
-      <nav className="bg-white h-20">
+      <nav className="">
         <div>
             <Image1 className=" relative top-5 left-4 inline-flex items-center justify-between" src="/logo.png" alt="Logo" width={50} height={50} />
         </div>
@@ -17,7 +17,7 @@ const Navbar = () => {
           <li className=" hover:bg-slate-300 p-3 rounded-xl cursor-pointer">
             <Image src="/account.png" alt="Account" width={25} height={25} />
           </li>
-          <li className=" hover:bg-slate-300 p-2 rounded-xl cursor-pointer">
+          <li className=" hover:bg-slate-300 p-1.5 rounded-xl cursor-pointer">
             <Image src="/settings.png" alt="Settings" width={50} height={50} />
           </li>
         </ul>
