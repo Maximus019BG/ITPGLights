@@ -1,9 +1,18 @@
-import Main from "./pages/main";
+import React from 'react';
+import Navbar from './components/navbar';
+import Content from './components/content';
 
-export default function Home() {
+const Main = () => {
   return (
     <div>
-      <Main/>
+        <div>
+            <Navbar/>
+        </div>
+        <div>
+            <Content/>
+        </div>
     </div>
-  );
+  )
 }
+
+export default Main
