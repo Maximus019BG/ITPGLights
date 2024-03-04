@@ -4,15 +4,15 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 240, 240, 240; /* Lighter shade for background start */
-  --background-end-rgb: 255, 255, 255;   /* Lighter shade for background end */
+  --background-start-rgb: 240, 240, 240; 
+  --background-end-rgb: 255, 255, 255;   
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 25, 25, 25;   /* Darker shade for background start */
-    --background-end-rgb: 25, 25, 25;     /* Darker shade for background end */
+    --background-start-rgb: 25, 25, 25;   
+    --background-end-rgb: 25, 25, 25;     
   }
 }
 

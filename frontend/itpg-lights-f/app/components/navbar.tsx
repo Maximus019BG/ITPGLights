@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Image1 from "next/image";
-
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -15,7 +15,9 @@ const Navbar = () => {
             <Image src="/home.png" alt="Home" width={30} height={30} />
           </li>
           <li className=" hover:bg-slate-300 p-3 rounded-xl cursor-pointer">
-            <Image src="/account.png" alt="Account" width={25} height={25} />
+            <Link href="/sign-up">
+              <Image src="/account.png" alt="Account" width={25} height={25} />
+            </Link>
           </li>
           <li className=" hover:bg-slate-300 p-1.5 rounded-xl cursor-pointer">
             <Image src="/settings.png" alt="Settings" width={50} height={50} />
