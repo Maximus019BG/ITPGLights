@@ -1,6 +1,2 @@
-﻿  function.cpp
-  main.cpp
-  native-lib.cpp
-  Generating Code...
-     Creating library D:\ITPGL\ITPGLights\server\x64\Debug\C++ for ITPGL.lib and object D:\ITPGL\ITPGLights\server\x64\Debug\C++ for ITPGL.exp
+﻿  native-lib.cpp
   C++ for ITPGL.vcxproj -> D:\ITPGL\ITPGLights\server\x64\Debug\C++ for ITPGL.exe

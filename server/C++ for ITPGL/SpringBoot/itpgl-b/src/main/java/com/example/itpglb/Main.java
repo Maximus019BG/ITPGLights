@@ -1,3 +1,5 @@
+package com.example.itpglb;
+
 public class Main {
 
     static {
@@ -13,7 +15,11 @@ public class Main {
 
     public static native void Connect_to_bluetooth_device();
 
-    public static void main(String[] args) {
+    
+    public static void ConnectDevice() {
         Connect_to_bluetooth_device();
+    }
+    public static void main(String[] args) {
+        ConnectDevice();
     }
 }
