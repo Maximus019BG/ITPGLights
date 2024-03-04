@@ -20,6 +20,13 @@ public class ItpglBApplication {
 		@GetMapping("/")
 		public String hello() {
 			return "Hello World 1";
-		}		
+		}	
+		@PostMapping("/POST")
+		public String postMethodName(@RequestBody String entity) {
+			//TODO: process POST request
+			
+			return entity;
+		}
+			
 	}
 }

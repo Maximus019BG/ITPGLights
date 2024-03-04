@@ -12,7 +12,7 @@ extern "C" {
  * Method:    Connect_to_bluetooth_device
  * Signature: ()V
  */
-JNIEXPORT void JNICALL Java_Main_Func
+JNIEXPORT void JNICALL Java_Main_Connect_to_bluetooth_device
   (JNIEnv *, jobject);
 
 #ifdef __cplusplus
