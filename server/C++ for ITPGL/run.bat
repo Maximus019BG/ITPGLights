@@ -23,13 +23,17 @@ cd "D:\ITPGL\ITPGLights\server\C++ for ITPGL\SpringBoot\itpgl-b"
 
 set JAVA_OPTS="-Djava.library.path=D:\ITPGL\ITPGLights\server\C++ for ITPGL"
 
+REM Define the output directory for the compiled .class files
+set CLASS_DIR="D:\ITPGL\ITPGLights\server\C++ for ITPGL\SpringBoot\itpgl-b\target\classes"
+
+REM Compile the Java file into the output directory
+javac -d %CLASS_DIR% %JAVA_FILE%
+
 REM If the Java file compiled successfully, run it
 if %errorlevel% equ 0 (
-
-    echo Running Java program...
+    echo Running Java program... 
     REM Run the Java program with the JAVA_OPTS
-    java %JAVA_OPTS% Main
-
+    java %JAVA_OPTS% -cp %CLASS_DIR% com.example.itpglb.Main
 ) else (
     echo Java compilation failed.
 )
