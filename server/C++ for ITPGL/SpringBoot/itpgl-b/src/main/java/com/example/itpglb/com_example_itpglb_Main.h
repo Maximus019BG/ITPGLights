@@ -9,10 +9,10 @@ extern "C" {
 #endif
 /*
  * Class:     com_example_itpglb_Main
- * Method:    Connect_to_bluetooth_device
+ * Method:    ConnectToBluetooth
  * Signature: ()V
  */
-JNIEXPORT void JNICALL Java_com_example_itpglb_Main_Connect_1to_1bluetooth_1device
+JNIEXPORT void JNICALL Java_com_example_itpglb_Main_ConnectToBluetooth
   (JNIEnv *, jclass);
 
 #ifdef __cplusplus

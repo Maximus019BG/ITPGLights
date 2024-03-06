@@ -11,6 +11,17 @@
 #pragma comment(lib, "Bthprops.lib")
 #pragma comment(lib, "Ws2_32.lib") // Add this line
 
+void str2ba(const char* str, BLUETOOTH_ADDRESS* btaddr) {
+    unsigned int b[6];
+
+    if (sscanf_s(str, "%02x:%02x:%02x:%02x:%02x:%02x", &b[0], &b[1], &b[2], &b[3], &b[4], &b[5]) != 6) {
+        throw std::runtime_error("Invalid MAC address format");
+    }
+
+    for (int i = 0; i < 6; ++i) {
+        btaddr->rgBytes[i] = static_cast<uint8_t>(b[i]);
+    }
+}
 
 void Connect_to_bluetooth_device() {
     WSADATA wsaData;
@@ -61,9 +72,41 @@ void Connect_to_bluetooth_device() {
         std::string mac_address;
         std::cin >> mac_address;
 
-        // TODO: Pair with the selected device
-        // TODO: Connect to the device
-        // TODO: Send data to the device 
+        // Pair with the selected device
+        BLUETOOTH_DEVICE_INFO_STRUCT deviceInfo = { sizeof(BLUETOOTH_DEVICE_INFO_STRUCT) };
+        str2ba(mac_address.c_str(), &deviceInfo.Address);
+        DWORD pcServices = 16;
+        GUID guids[16];
+        DWORD result = BluetoothAuthenticateDeviceEx(NULL, hRadio, &deviceInfo, NULL, MITMProtectionNotRequired);
+        if (result != ERROR_SUCCESS) {
+            throw std::runtime_error("BluetoothAuthenticateDeviceEx failed");
+        }
+
+        // Connect to the device
+        SOCKADDR_BTH sa = { 0 };
+        sa.addressFamily = AF_BTH;
+        sa.btAddr = deviceInfo.Address.ullLong;
+        sa.serviceClassId = SerialPortServiceClass_UUID;
+        sa.port = BT_PORT_ANY;
+        SOCKET s = socket(AF_BTH, SOCK_STREAM, BTHPROTO_RFCOMM);
+        if (s == INVALID_SOCKET) {
+            throw std::runtime_error("socket failed");
+        }
+        if (connect(s, (SOCKADDR*)&sa, sizeof(sa)) == SOCKET_ERROR) {
+            closesocket(s);
+            throw std::runtime_error("connect failed");
+        }
+
+        // Send data to the device
+        const char* data = "Hello, Bluetooth!";
+        int bytes_sent = send(s, data, strlen(data), 0);
+        if (bytes_sent == SOCKET_ERROR) {
+            closesocket(s);
+            throw std::runtime_error("send failed");
+        }
+
+        // Close the socket
+        closesocket(s);
 
         // Clean up
         if (hFind && !BluetoothFindDeviceClose(hFind)) {

@@ -18,11 +18,13 @@ public class Main {
         System.loadLibrary("native-lib");
     }
     
-    public static native void Connect_to_bluetooth_device();
+    public static native void ConnectToBluetooth();
 
     
     public static void ConnectDevice() {
-        Connect_to_bluetooth_device();
+        System.out.println("Devices:");
+        ConnectToBluetooth();
+        
     }
     public static void main(String[] args) {
         ConnectDevice();

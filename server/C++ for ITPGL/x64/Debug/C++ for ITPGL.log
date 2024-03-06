@@ -1,2 +1,5 @@
-﻿  native-lib.cpp
+﻿  function.cpp
+D:\ITPGL\ITPGLights\server\C++ for ITPGL\function.cpp(102,46): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\ITPGL\ITPGLights\server\C++ for ITPGL\function.cpp(79,14): warning C4101: 'guids': unreferenced local variable
+     Creating library D:\ITPGL\ITPGLights\server\x64\Debug\C++ for ITPGL.lib and object D:\ITPGL\ITPGLights\server\x64\Debug\C++ for ITPGL.exp
   C++ for ITPGL.vcxproj -> D:\ITPGL\ITPGLights\server\x64\Debug\C++ for ITPGL.exe
