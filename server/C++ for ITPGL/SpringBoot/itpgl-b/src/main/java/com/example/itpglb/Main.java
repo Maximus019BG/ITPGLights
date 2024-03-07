@@ -26,6 +26,8 @@ public class Main {
         ConnectToBluetooth();
         
     }
+
+
     public static void main(String[] args) {
         ConnectDevice();
     }

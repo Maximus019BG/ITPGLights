@@ -10,7 +10,7 @@ set OUTPUT_DLL=native-lib.dll
 
 REM Compile the C++ code into a DLL
 cd "D:\ITPGL\ITPGLights\server\C++ for ITPGL"
-g++ -I%INCLUDE_PATH1% -I%INCLUDE_PATH2% -shared -o %OUTPUT_DLL% %SOURCE_FILE1% %SOURCE_FILE2% -lws2_32 -lbthprops
+g++ -I%INCLUDE_PATH1% -I%INCLUDE_PATH2% -shared -o %OUTPUT_DLL% %SOURCE_FILE1% %SOURCE_FILE2% -lws2_32 -lbthprops 
 echo Compilation finished. Output: %OUTPUT_DLL%
 
 REM Define the name of the Java file to compile and run
@@ -18,13 +18,15 @@ set JAVA_FILE="D:\ITPGL\ITPGLights\server\C++ for ITPGL\SpringBoot\itpgl-b\src\m
 
 REM Compile the Java file
 javac %JAVA_FILE%
-@REM cd "D:\ITPGL\ITPGLights\server\C++ for ITPGL\SpringBoot\itpgl-b"
-@REM ./mvnw spring-boot:run
+cd "D:\ITPGL\ITPGLights\server\C++ for ITPGL\SpringBoot\itpgl-b"
+./mvnw spring-boot:run
 
 set JAVA_OPTS="-Djava.library.path=D:\ITPGL\ITPGLights\server\C++ for ITPGL"
 
 REM Define the output directory for the compiled .class files
-set CLASS_DIR="D:\ITPGL\ITPGLights\server\C++ for ITPGL\SpringBoot\itpgl-b\target\classes"
+set CLASS_DIR="D:\ITPGL\ITPGLights\server\C++ for ITPGL\SpringBoot\itpgl-b\target\classes"  
+
+java %JAVA_OPTS% -cp %CLASS_DIR% com.example.itpglb.Main
 
 REM Compile the Java file into the output directory
 javac -d %CLASS_DIR% %JAVA_FILE%
