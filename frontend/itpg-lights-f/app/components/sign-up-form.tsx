@@ -2,7 +2,7 @@ import React from "react";
 
 const Form = () => {
   return (
-    <div className="relative left-1/4 top-14">
+    <div className=" flex flex-col items-end mr-64 mt-16">
         <h1 className="relative top-20 flex justify-center items-center font-bold text-2xl">
             Регистрация
         </h1>
